@@ -1,0 +1,9 @@
+# Nintendo Switch homebrew build outputs
+examples/switch/**/build/
+examples/switch/**/*.elf
+examples/switch/**/*.nacp
+examples/switch/**/*.nro
+examples/switch/**/*.nsp
+examples/switch/**/*.nso
+examples/switch/**/*.npdm
+examples/switch/**/*.map
