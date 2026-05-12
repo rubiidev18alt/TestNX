@@ -18,10 +18,15 @@ int main(int argc, char **argv)
     PadState pad;
     padInitializeDefault(&pad);
 
-    // Move the cursor to row 16 and column 20 and then print "Hello World!".
-    // To move the cursor you print "\x1b[r;cH", where r and c are the row and
-    // column where you want your cursor to move.
-    printf("\x1b[16;20HHello from TestNX!");
+    // Move the cursor to row 16 and column 20 before printing the message.
+    // "\x1b[16;20H" is an ANSI escape code: 16 is the screen row, 20 is
+    // the screen column, and H tells the console to move the cursor there.
+    // "\x1b[31m" changes the text color to red. The number 31 is the
+    // ANSI color code for red foreground text.
+    // "\x1b[1m" turns on bold/bright text, which makes the console text
+    // look just a pinch bigger and easier to see.
+    // "\x1b[0m" resets the style after the message so later text is normal.
+    printf("\x1b[16;20H\x1b[31m\x1b[1mHello from TestNX!\x1b[0m");
 
     while (appletMainLoop()) {
         // Scan the gamepad. This should be done once for each frame.
