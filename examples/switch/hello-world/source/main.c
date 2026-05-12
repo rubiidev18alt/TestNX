@@ -21,7 +21,7 @@ int main(int argc, char **argv)
     // Move the cursor to row 16 and column 20 and then print "Hello World!".
     // To move the cursor you print "\x1b[r;cH", where r and c are the row and
     // column where you want your cursor to move.
-    printf("\x1b[16;20HHello World!");
+    printf("\x1b[16;20HHello from TestNX!");
 
     while (appletMainLoop()) {
         // Scan the gamepad. This should be done once for each frame.
